@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>安肖世界</title>
+    <title>安肖的戀愛世界</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         body {
             background-color: #1a0033;
@@ -32,6 +33,28 @@
             font-style: italic;
             color: #ff69b4;
         }
+        #love-calculator {
+            background-color: #2e004d;
+            border: 1px solid #4b0082;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        #story-generator {
+            background-color: #2e004d;
+            border: 1px solid #4b0082;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .modal-content {
+            background-color: #2e004d;
+            color: #e0e0e0;
+        }
+        .modal-header {
+            border-bottom: 1px solid #4b0082;
+        }
+        .modal-footer {
+            border-top: 1px solid #4b0082;
+        }
     </style>
 </head>
 <body>
@@ -44,16 +67,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">首頁</a>
+                        <a class="nav-link" href="#home">首頁</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">角色</a>
+                        <a class="nav-link" href="#characters">角色</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">故事</a>
+                        <a class="nav-link" href="#stories">故事</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">關於作者</a>
+                        <a class="nav-link" href="#tools">戀愛工具</a>
                     </li>
                 </ul>
             </div>
@@ -61,40 +84,99 @@
     </nav>
 
     <main class="container my-5">
-        <h1 class="text-center mb-5">進入安肖的浪漫世界</h1>
-        <p class="love-quote text-center mb-5">"在這個世界裡,每個靈魂都在尋找它的另一半。" - 安肖</p>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="./S__130727962_0.jpg" class="card-img-top" alt="神秘女主角">
-                    <div class="card-body">
-                        <h5 class="card-title">月光下的邂逅</h5>
-                        <p class="card-text">一個關於命運相遇的神秘故事</p>
-                        <a href="#" class="btn btn-outline-light">閱讀更多</a>
+        <section id="home">
+            <h1 class="text-center mb-5">進入安肖的浪漫世界</h1>
+            <p class="love-quote text-center mb-5">"在這個世界裡,每個靈魂都在尋找它的另一半。" - 安肖</p>
+        </section>
+
+        <section id="characters" class="mb-5">
+            <h2 class="mb-4">主要角色</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="./S__130727962_0.jpg" class="card-img-top" alt="女主角">
+                        <div class="card-body">
+                            <h5 class="card-title">月光</h5>
+                            <p class="card-text">神秘優雅的女主角，擁有預知未來的能力。</p>
+                            <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#characterModal" data-character="月光">了解更多</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="./S__130727964_0.jpg" class="card-img-top" alt="男主角">
+                        <div class="card-body">
+                            <h5 class="card-title">星辰</h5>
+                            <p class="card-text">深沉內斂的男主角，擁有穿越時空的能力。</p>
+                            <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#characterModal" data-character="星辰">了解更多</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="./S__130727965_0.jpg" class="card-img-top" alt="配角">
+                        <div class="card-body">
+                            <h5 class="card-title">晨曦</h5>
+                            <p class="card-text">活潑開朗的配角，是月光的摯友。</p>
+                            <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#characterModal" data-character="晨曦">了解更多</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="./S__130727964_0.jpg" class="card-img-top" alt="浪漫場景">
-                    <div class="card-body">
-                        <h5 class="card-title">星空下的誓言</h5>
-                        <p class="card-text">當愛情遇上永恆的承諾</p>
-                        <a href="#" class="btn btn-outline-light">閱讀更多</a>
+        </section>
+
+        <section id="stories" class="mb-5">
+            <h2 class="mb-4">最新故事</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">命運的交錯</h5>
+                            <p class="card-text">當月光和星辰在一次意外中相遇，他們的命運從此改變...</p>
+                            <a href="#" class="btn btn-outline-light">閱讀更多</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">時光的羈絆</h5>
+                            <p class="card-text">星辰為了拯救月光，決定踏上一段穿越時空的冒險...</p>
+                            <a href="#" class="btn btn-outline-light">閱讀更多</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="/./S__130727965_0.jpg" class="card-img-top" alt="神秘物品">
-                    <div class="card-body">
-                        <h5 class="card-title">魔法戒指</h5>
-                        <p class="card-text">一個能夠連接靈魂的神秘物品</p>
-                        <a href="#" class="btn btn-outline-light">探索秘密</a>
+        </section>
+
+        <section id="tools" class="mb-5">
+            <h2 class="mb-4">戀愛工具</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div id="love-calculator">
+                        <h3 class="mb-3">戀愛契合度計算器</h3>
+                        <div class="mb-3">
+                            <input type="text" class="form-control mb-2" id="name1" placeholder="輸入第一個名字">
+                            <input type="text" class="form-control mb-2" id="name2" placeholder="輸入第二個名字">
+                            <button class="btn btn-outline-light" onclick="calculateLove()">計算契合度</button>
+                        </div>
+                        <div id="love-result"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div id="story-generator">
+                        <h3 class="mb-3">浪漫故事生成器</h3>
+                        <div class="mb-3">
+                            <input type="text" class="form-control mb-2" id="character1" placeholder="輸入角色1的名字">
+                            <input type="text" class="form-control mb-2" id="character2" placeholder="輸入角色2的名字">
+                            <input type="text" class="form-control mb-2" id="location" placeholder="輸入地點">
+                            <button class="btn btn-outline-light" onclick="generateStory()">生成故事</button>
+                        </div>
+                        <div id="story-result"></div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <footer class="bg-dark text-light py-4 mt-5">
@@ -103,6 +185,59 @@
         </div>
     </footer>
 
+    <!-- 角色詳情模態框 -->
+    <div class="modal fade" id="characterModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="characterName"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="characterDescription"></div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function calculateLove() {
+            const name1 = document.getElementById('name1').value;
+            const name2 = document.getElementById('name2').value;
+            if (name1 && name2) {
+                const loveScore = Math.floor(Math.random() * 101);
+                document.getElementById('love-result').innerHTML = `${name1} 和 ${name2} 的戀愛契合度為 ${loveScore}%！`;
+            } else {
+                document.getElementById('love-result').innerHTML = '請輸入兩個名字。';
+            }
+        }
+
+        function generateStory() {
+            const character1 = document.getElementById('character1').value;
+            const character2 = document.getElementById('character2').value;
+            const location = document.getElementById('location').value;
+            if (character1 && character2 && location) {
+                const story = `在一個美麗的${location}，${character1}和${character2}相遇了。他們的眼神交錯，心跳加速，彷彿整個世界只剩下彼此。這是他們愛情故事的開始，一段將永遠改變他們生命的奇妙旅程。`;
+                document.getElementById('story-result').innerHTML = story;
+            } else {
+                document.getElementById('story-result').innerHTML = '請填寫所有欄位。';
+            }
+        }
+
+        document.getElementById('characterModal').addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const character = button.getAttribute('data-character');
+            const modalTitle = this.querySelector('.modal-title');
+            const modalBody = this.querySelector('.modal-body');
+
+            const characters = {
+                '月光': '月光是一位神秘優雅的女子，擁有預知未來的能力。她的眼睛如同深邃的夜空，充滿智慧和憂傷。她善良溫柔，但因為能力的緣故，常常感到孤獨。',
+                '星辰': '星辰是一位深沉內斂的男子，擁有穿越時空的能力。他外表冷峻，內心卻熱情如火。他一直在尋找生命的意義，直到遇見月光，他的世界才有了色彩。',
+                '晨曦': '晨曦是月光的摯友，性格活潑開朗。她沒有特殊能力，但她的樂觀和勇氣常常能夠鼓舞身邊的人。她是月光和星辰之間的橋樑，在他們的故事中扮演著重要的角色。'
+            };
+
+            modalTitle.textContent = character;
+            modalBody.textContent = characters[character];
+        });
+    </script>
 </body>
 </html>
